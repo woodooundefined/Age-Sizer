@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 90s Tiled Background Pattern */
+.bg-90s-tile {
+  background-color: #c0c0c0;
+  background-image:
+    linear-gradient(45deg, #b8b8b8 25%, transparent 25%),
+    linear-gradient(-45deg, #b8b8b8 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #b8b8b8 75%),
+    linear-gradient(-45deg, transparent 75%, #b8b8b8 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+}
+
+/* Construction Stripes */
+.bg-construction {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffff00,
+    #ffff00 10px,
+    #000000 10px,
+    #000000 20px
+  );
+}
+
+/* Horizontal Rule Groove Effect */
+.hr-groove {
+  border: none;
+  height: 4px;
+  background: linear-gradient(
+    to bottom,
+    #808080 0%, #808080 50%,
+    #ffffff 50%, #ffffff 100%
+  );
+}
+
+/* Outset Bevel (Raised) */
+.bevel-outset {
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  box-shadow: inset -1px -1px 0 #404040, inset 1px 1px 0 #dfdfdf;
+}
+
+/* Inset Bevel (Sunken) */
+.bevel-inset {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #dfdfdf;
+}
+
+/* Windows 95 Title Bar */
+.win95-titlebar {
+  background: linear-gradient(to right, #000080, #1084d0);
+  color: white;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+
+/* Button Active State */
+.btn-active:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  box-shadow: inset 1px 1px 0 #404040, inset -1px -1px 0 #dfdfdf !important;
+  transform: translate(1px, 1px);
+}
+
+/* Focus Ring */
+.focus-win95:focus-visible {
+  outline: 2px dotted black;
+  outline-offset: 2px;
+}
+
+/* Hit Counter Style */
+.hit-counter {
+  background: #000080;
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* Link Styles */
+a.retro-link {
+  color: #0000ff;
+  text-decoration: underline;
+}
+
+a.retro-link:hover {
+  color: #ff0000;
+}
+
+a.retro-link:visited {
+  color: #800080;
+}
+
+/* Status Indicator */
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.status-dot.online {
+  background: #00ff00;
+}
+
+.status-dot.offline {
+  background: #ff0000;
+}
+
+.status-dot.loading {
+  background: #ffff00;
+  animation: blink 1s step-end infinite;
+}
+
+/* RainbowKit Overrides for 90s Style */
+[data-rk] {
+  --rk-radii-modal: 0 !important;
+  --rk-radii-menuButton: 0 !important;
+  --rk-radii-actionButton: 0 !important;
+  --rk-radii-connectButton: 0 !important;
+}
+
+/* Loading Spinner 90s Style */
+.loader-90s {
+  width: 32px;
+  height: 32px;
+  border: 4px solid #808080;
+  border-top-color: #000080;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Selection */
+::selection {
+  background: #000080;
+  color: white;
+}
+
+/* Hide scrollbar */
+html, body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Remove all border radius from RainbowKit */
+[data-rk] * {
+  border-radius: 0 !important;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
