@@ -64,18 +64,14 @@ export function StatusBar() {
       {/* Contract Address */}
       <div className="flex items-center gap-2">
         <span className="font-bold">CONTRACT:</span>
-        {CONTRACT_ADDRESS !== "0x0000000000000000000000000000000000000000" ? (
-          <a
-            href={`${ETHERSCAN_URL}/address/${CONTRACT_ADDRESS}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="retro-link"
-          >
-            {shortenAddress(CONTRACT_ADDRESS)}
-          </a>
-        ) : (
-          <span className="text-[#808080]">NOT SET</span>
-        )}
+        <a
+          href={`${ETHERSCAN_URL}/address/${CONTRACT_ADDRESS}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="retro-link"
+        >
+          {shortenAddress(CONTRACT_ADDRESS)}
+        </a>
       </div>
 
       {/* Divider */}
